@@ -51,6 +51,8 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -75,7 +77,7 @@ SpriteRenderer:
   m_SortingLayerID: 413980363
   m_SortingLayer: 4
   m_SortingOrder: 0
-  m_Sprite: {fileID: 5012491988584609388, guid: 7a9a680d094990442a4b114cf619b6fd,
+  m_Sprite: {fileID: -7831782655147182418, guid: 83ef1e102cefea642bd85e6140461de8,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -123,7 +125,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 0.64, y: 0.64}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -201,3 +203,4 @@ MonoBehaviour:
     type: 3}
   tamanhoPiscina: 7
   velocidadeArma: 2
+  animator: {fileID: 0}
