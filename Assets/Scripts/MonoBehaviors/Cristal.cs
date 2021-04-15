@@ -29,7 +29,7 @@ public class Cristal : MonoBehaviour
 
     public void TrocarCor()
     {
-        if (habilitado)
+        if (habilitado && cores != null && cores.Length > 0)
         {
             if (interruptor)
             {
