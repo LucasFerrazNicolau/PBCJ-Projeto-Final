@@ -56,7 +56,7 @@ public class Arma : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && !PauseMenu.GameIsPaused)
         {
             atirando = true;
             DispararMunicao();
