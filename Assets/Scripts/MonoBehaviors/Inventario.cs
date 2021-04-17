@@ -56,4 +56,26 @@ public class Inventario : MonoBehaviour
 
         return false;
     }
+
+    public bool removeMunicao()                         // metodo que remove munição do inventario quando a mesma é disparada
+    {
+        for (int i = 0; i < items.Length; i++)
+        {
+            if (items[i] != null && items[i].tipoItem == Item.TipoItem.MUNICAO)
+            {
+                if (items[i].quantidade > 0)
+                {
+                    items[i].quantidade--;
+                    Slot slotScript = slots[i].gameObject.GetComponent<Slot>();
+                    Text quantidadeTexto = slotScript.qtdTexto;
+                    quantidadeTexto.enabled = true;
+                    quantidadeTexto.text = items[i].quantidade.ToString();
+                    return true;
+                }
+            }
+
+        }
+        return false;
+    }
 }
+

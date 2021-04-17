@@ -201,6 +201,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   municaoPrefab: {fileID: 6322774826921162216, guid: f5aebce6a2456f1408b18e4e7a222786,
     type: 3}
-  tamanhoPiscina: 7
-  velocidadeArma: 2
+  tamanhoPiscina: 1
+  velocidadeArma: 1
   animator: {fileID: 0}

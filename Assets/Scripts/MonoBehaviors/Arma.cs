@@ -58,8 +58,11 @@ public class Arma : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0) && !PauseMenu.GameIsPaused)
         {
-            atirando = true;
-            DispararMunicao();
+            if (GetComponent<Player>().verificaMunicao() == true)
+            {
+                atirando = true;
+                DispararMunicao();
+            }
         }
         UpdateEstado();
     }

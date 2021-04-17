@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : Caractere
 {
@@ -32,13 +33,19 @@ public class Player : Caractere
 
                 switch (danoObjeto.tipoItem)
                 {
-                    case Item.TipoItem.MOEDA:
-                        //deveDesaparecer = true;
+                    case Item.TipoItem.CHAVE:
                         deveDesaparecer = inventario.AddItem(danoObjeto);
                         break;
-                    case Item.TipoItem.HEALTH:
+                    case Item.TipoItem.MUNICAO:
+                        for(int i=0;  i< danoObjeto.quantidade; i++)
+                        {
+                            deveDesaparecer = inventario.AddItem(danoObjeto);
+                        }
+                        break;
+                    case Item.TipoItem.POÇÃO:
                         deveDesaparecer = AjustarPontosDano(danoObjeto.quantidade);
                         break;
+
                     default:
                         break;
                 }
@@ -81,6 +88,7 @@ public class Player : Caractere
         base.KillCaractere();
         Destroy(healthBar.gameObject);
         Destroy(inventario.gameObject);
+        SceneManager.LoadScene("Game_Over");
     }
 
     public override void ResetCaractere()
@@ -103,5 +111,14 @@ public class Player : Caractere
         {
             return false;
         }
+    }
+
+    public bool verificaMunicao()                   // metodo que verifica se o player possui munição
+    {
+        if (inventario.removeMunicao() == true)
+        {
+            return true;
+        }
+        return false;
     }
 }

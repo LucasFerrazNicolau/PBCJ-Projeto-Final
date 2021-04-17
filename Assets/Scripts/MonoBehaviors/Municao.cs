@@ -3,6 +3,7 @@
 public class Municao : MonoBehaviour
 {
     public int danoCausado; // Poder de dano da munição
+    public AudioClip hit;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -10,6 +11,9 @@ public class Municao : MonoBehaviour
         {
             if (collision.gameObject.CompareTag("Inimigo"))
             {
+                /*AudioSource hitprefab = GetComponent<AudioSource>();
+                hitprefab.clip = hit;
+                hitprefab.Play();*/
                 Inimigo inimigo = collision.gameObject.GetComponent<Inimigo>();
                 StartCoroutine(inimigo.DanoCaractere(danoCausado, 0.0f));
                 gameObject.SetActive(false);

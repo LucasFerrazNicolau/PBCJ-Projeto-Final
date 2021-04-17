@@ -48,6 +48,8 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -72,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 413980363
   m_SortingLayer: 4
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 9357fd4ade539f049b5682c071ff6d2b, type: 3}
+  m_Sprite: {fileID: 201767957516689898, guid: 2f6be8799177c42469141b99bdfd519d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -112,6 +114,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   danoCausado: 1
+  hitprefab: {fileID: 0}
+  hit: {fileID: 8300000, guid: 71547e8df7308fb49817e9ef10e68a48, type: 3}
 --- !u!114 &-4980354540798108815
 MonoBehaviour:
   m_ObjectHideFlags: 0
