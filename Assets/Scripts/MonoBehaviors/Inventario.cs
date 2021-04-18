@@ -77,5 +77,42 @@ public class Inventario : MonoBehaviour
         }
         return false;
     }
+
+    /// <summary>
+    /// Método para remoção de item através do nome do item removido
+    /// </summary>
+    /// <param name="itemToRemoveName">Nome do item a ser removido</param>
+    /// <returns>Retorna se remoção do item foi sucedida</returns>
+    public bool RemoveItem(string itemToRemoveName)
+    {
+        for (int i = 0; i < items.Length; i++)
+        {
+            if (items[i] != null && items[i].nomeObjeto == itemToRemoveName && (!items[i].empilhavel || items[i].quantidade > 0))
+            {
+                if (items[i].empilhavel)
+                {
+                    items[i].quantidade--;
+                    Slot slotScript = slots[i].gameObject.GetComponent<Slot>();
+                    Text quantidadeTexto = slotScript.qtdTexto;
+                    quantidadeTexto.enabled = true;
+                    quantidadeTexto.text = items[i].quantidade.ToString();
+                }
+                else
+                {
+                    Slot slotScript = slots[i].gameObject.GetComponent<Slot>();
+                    Text quantidadeTexto = slotScript.qtdTexto;
+                    quantidadeTexto.enabled = false;
+                    quantidadeTexto.text = "";
+                    itemImagens[i].sprite = null;
+                    itemImagens[i].enabled = false;
+                    items[i] = null;
+                }
+
+                return true;
+            }
+        }
+
+        return false;
+    }
 }
 

@@ -56,6 +56,13 @@ public class Player : Caractere
                 }
             }
         }
+        else if (collision.gameObject.CompareTag("Porta"))
+        {
+            Porta porta = collision.gameObject.GetComponent<Porta>();
+            if (porta.tipoPorta == Porta.TipoPorta.CHAVE)
+                if (inventario.RemoveItem("CHAVE"))
+                    porta.AbrirPorta();
+        }
     }
 
     public override IEnumerator DanoCaractere(int dano, float intervalo)
