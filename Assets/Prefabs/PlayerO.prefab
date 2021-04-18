@@ -180,7 +180,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3660e61a96c30c4c928b62374c290d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  InicioPontosDano: 6
+  InicioPontosDano: 5
   MaxPontosDano: 10
   inventarioPrefab: {fileID: -2601391893985850245, guid: 32beccdce5cb9ed4db3b8254a537bde0,
     type: 3}

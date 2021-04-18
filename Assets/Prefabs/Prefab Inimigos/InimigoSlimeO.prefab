@@ -167,8 +167,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 201da3311408c6043a3954219f827f15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  InicioPontosDano: 4
-  MaxPontosDano: 4
+  InicioPontosDano: 3
+  MaxPontosDano: 3
   forcaDano: 2
 --- !u!58 &8291525805975264178
 CircleCollider2D:
@@ -198,7 +198,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec10fd618a7f7534382bbbb7fc2cd313, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocidadePerseguicao: 0.8
+  velocidadePerseguicao: 1.6
   velocidadePerambular: 0.4
   intervaloMudancaDirecao: 3
   perseguePlayer: 1

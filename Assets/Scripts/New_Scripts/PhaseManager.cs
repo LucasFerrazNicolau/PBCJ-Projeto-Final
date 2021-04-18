@@ -42,7 +42,7 @@ public class PhaseManager : MonoBehaviour
     }
 
     public void Fase1() {                   // Carrega a fase 1
-        SceneManager.LoadScene("Lab5_RPGSetup");
+        SceneManager.LoadScene("Lab5_RPG_Cena01");
     }
 
     public void Fase2() {                   // Carrega a fase 2

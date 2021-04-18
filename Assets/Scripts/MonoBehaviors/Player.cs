@@ -95,6 +95,8 @@ public class Player : Caractere
         base.KillCaractere();
         Destroy(healthBar.gameObject);
         Destroy(inventario.gameObject);
+        int indexCena = SceneManager.GetActiveScene().buildIndex;
+        PlayerPrefs.SetInt("previousLevel", indexCena);
         SceneManager.LoadScene("Game_Over");
     }
 
@@ -128,4 +130,5 @@ public class Player : Caractere
         }
         return false;
     }
+
 }
