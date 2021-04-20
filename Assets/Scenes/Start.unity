@@ -1007,7 +1007,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: SAIR
+  m_Text: Sair
 --- !u!222 &585082216
 CanvasRenderer:
   m_ObjectHideFlags: 0
