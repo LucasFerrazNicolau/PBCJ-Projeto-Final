@@ -37,7 +37,7 @@ public class PhaseManager : MonoBehaviour
     }
 
     public void Exit() {                    // Fecha o jogo
-        Debug.Log("Sai");
+        Debug.Log("Saiu do jogo");
         Application.Quit();
     }
 
@@ -55,6 +55,10 @@ public class PhaseManager : MonoBehaviour
 
     public void Creditos() {                   // Carrega a fase Creditos
         SceneManager.LoadScene("Credits");
+    }
+    public void MenuPrincipal()
+    {                                          // Alternativa para voltar ao menu principal
+        SceneManager.LoadScene("Start");
     }
 
     public void Resolucao1280x720() {               // Seta a resolução em 1280x720
