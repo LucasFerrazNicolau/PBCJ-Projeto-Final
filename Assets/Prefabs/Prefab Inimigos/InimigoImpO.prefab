@@ -167,8 +167,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 201da3311408c6043a3954219f827f15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  InicioPontosDano: 10
-  MaxPontosDano: 10
+  InicioPontosDano: 7
+  MaxPontosDano: 7
   forcaDano: 5
 --- !u!58 &7045396979796351960
 CircleCollider2D:
@@ -185,7 +185,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 3
+  m_Radius: 5
 --- !u!114 &5875212077023741093
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -198,7 +198,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec10fd618a7f7534382bbbb7fc2cd313, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocidadePerseguicao: 0.8
-  velocidadePerambular: 0.4
+  velocidadePerseguicao: 1.6
+  velocidadePerambular: 0.8
   intervaloMudancaDirecao: 3
   perseguePlayer: 1

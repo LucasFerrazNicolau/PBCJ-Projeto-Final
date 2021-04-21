@@ -198,7 +198,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec10fd618a7f7534382bbbb7fc2cd313, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocidadePerseguicao: 1.6
+  velocidadePerseguicao: 1.2
   velocidadePerambular: 0.4
   intervaloMudancaDirecao: 3
   perseguePlayer: 1
