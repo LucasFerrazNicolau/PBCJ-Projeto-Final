@@ -34,6 +34,9 @@ public class Perambular : MonoBehaviour
         rb2D = GetComponent<Rigidbody2D>();
         StartCoroutine(RotinaPerambular());
         circleCollider = GetComponent<CircleCollider2D>();
+
+        // Faz com que o movimento do Inimigo seja direcionado para lugares mais proóximos
+        posicaoFinal = transform.position;
     }
 
     // Update is called once per frame
