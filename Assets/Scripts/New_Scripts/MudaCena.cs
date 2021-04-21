@@ -7,7 +7,10 @@ public class MudaCena : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        mudaCena();
+        if (collision.gameObject.tag == "Player")
+        {
+            mudaCena();
+        }
     }
 
 
