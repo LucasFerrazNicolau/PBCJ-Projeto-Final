@@ -12,6 +12,8 @@ public class Player : Caractere
 
     public PontosDano pontosDano; // novo tipo que tem o valor da "saúde" do objeto script
 
+    public GameObject Destino;
+
     private void Start()
     {
         inventario = Instantiate(inventarioPrefab);
@@ -62,6 +64,12 @@ public class Player : Caractere
             if (porta.tipoPorta == Porta.TipoPorta.CHAVE)
                 if (inventario.RemoveItem("CHAVE"))
                     porta.AbrirPorta();
+        }
+        else if (collision.gameObject.CompareTag("TeleporteBoss"))
+        {
+            Destino = GameObject.Find("TeleportDestino");
+            Debug.Log("passou no portao");
+            transform.position = Destino.transform.position;
         }
     }
 

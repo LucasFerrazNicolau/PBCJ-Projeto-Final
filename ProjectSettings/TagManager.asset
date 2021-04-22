@@ -9,6 +9,7 @@ TagManager:
   - Virtual Camera
   - Cristal
   - Porta
+  - TeleporteBoss
   layers:
   - Default
   - TransparentFX
