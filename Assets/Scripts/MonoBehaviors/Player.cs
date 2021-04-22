@@ -5,10 +5,10 @@ using UnityEngine.SceneManagement;
 public class Player : Caractere
 {
     public Inventario inventarioPrefab; // referência ao objeto prefab criado do Inventário
-    Inventario inventario;
+    Inventario inventario; // referência ao Inventário
 
     public HealthBar healthBarPrefab; // referência ao objeto prefab criado da HealthBar
-    HealthBar healthBar;
+    HealthBar healthBar; // referência à HealthBar
 
     public PontosDano pontosDano; // novo tipo que tem o valor da "saúde" do objeto script
 
@@ -58,6 +58,7 @@ public class Player : Caractere
                 }
             }
         }
+        // Verificação de colisão com Porta e se o Player possui chaves (Lucas Ferraz Nicolau)
         else if (collision.gameObject.CompareTag("Porta"))
         {
             Porta porta = collision.gameObject.GetComponent<Porta>();
@@ -116,6 +117,11 @@ public class Player : Caractere
         pontosDano.valor = InicioPontosDano;
     }
 
+    /// <summary>
+    /// Método que recupera os pontos de dano (saúde) do player
+    /// </summary>
+    /// <param name="quantidade">Quantidade de pontos de vida recebida</param>
+    /// <returns>Retorna se a quantidade de vida foi aumentada, isto é, se já não estava no máximo</returns>
     public bool AjustarPontosDano(int quantidade)
     {
         if (pontosDano.valor < MaxPontosDano)

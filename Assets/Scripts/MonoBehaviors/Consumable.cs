@@ -2,5 +2,5 @@
 
 public class Consumable : MonoBehaviour
 {
-    public Item item;
+    public Item item; // Referência ao Item definido em ScriptableObject
 }

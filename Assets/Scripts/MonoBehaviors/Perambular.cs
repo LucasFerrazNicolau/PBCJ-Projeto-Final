@@ -81,6 +81,10 @@ public class Perambular : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Método padrão do Perambular enquanto player não foi encontrado
+    /// </summary>
+    /// <returns>IEnumartor relativo ao intervalo de encontrar novo ponto de destino aleatório</returns>
     public IEnumerator RotinaPerambular()
     {
         while (true)
@@ -95,6 +99,9 @@ public class Perambular : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Seleciona um novo destino aleatório
+    /// </summary>
     void EscolherNovoPontoFinal()
     {
         anguloAtual += Random.Range(0, 360);
@@ -102,12 +109,23 @@ public class Perambular : MonoBehaviour
         posicaoFinal += Vector3ParaAngulo(anguloAtual);
     }
 
+    /// <summary>
+    /// Obtém uma direção com base no ângulo indicado
+    /// </summary>
+    /// <param name="anguloEntradaGraus">Ângulo em graus</param>
+    /// <returns>Direção obtida do ângulo</returns>
     Vector3 Vector3ParaAngulo(float anguloEntradaGraus)
     {
         float anguloEntradaRadianos = anguloEntradaGraus * Mathf.Deg2Rad;
         return new Vector3(Mathf.Cos(anguloEntradaRadianos), Mathf.Sin(anguloEntradaRadianos), 0);
     }
 
+    /// <summary>
+    /// Método que movimenta o RigidBody do objeto que está permbulando
+    /// </summary>
+    /// <param name="rbParaMover">RigidBody2D que deve ser movimentado</param>
+    /// <param name="velocidade">Velocidade com que o objeto se movimenta</param>
+    /// <returns>IEnumerator respectivo ao intervalo de tempo do FixedUpdate</returns>
     public IEnumerator Mover(Rigidbody2D rbParaMover, float velocidade)
     {
         float distanciaFaltante = (transform.position - posicaoFinal).sqrMagnitude;

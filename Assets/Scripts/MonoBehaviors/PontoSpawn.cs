@@ -2,9 +2,9 @@
 
 public class PontoSpawn : MonoBehaviour
 {
-    public GameObject prefabParaSpawn;
+    public GameObject prefabParaSpawn; // referência do prefab utilizado no Ponto de Spawn
 
-    public float intervaloRepeticao;
+    public float intervaloRepeticao; // intervalo em segundos de quanto tempo irá levar para spawnar novo objeto
 
     // Start is called before the first frame update
     void Start()
@@ -15,6 +15,10 @@ public class PontoSpawn : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Realiza o spawn do objeto, isto é, cria ele no jogo
+    /// </summary>
+    /// <returns>Referência para o objeto criado</returns>
     public GameObject SpawnO()
     {
         if (prefabParaSpawn != null)

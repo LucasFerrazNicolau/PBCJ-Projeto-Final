@@ -1,5 +1,6 @@
 using UnityEngine;
 
+// Classe criada e gerenciada por Lucas Ferraz Nicolau
 public class Porta : MonoBehaviour
 {
     public bool habilidata; // Indica se porta ainda pode aparecer/desaparecer
@@ -38,6 +39,9 @@ public class Porta : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Aplica a operação de abrir a Porta, isto é, desativá-la para que o Player possa atravessar
+    /// </summary>
     public void AbrirPorta()
     {
         if (tipoPorta == TipoPorta.CRISTAL && desabilitarCristais)

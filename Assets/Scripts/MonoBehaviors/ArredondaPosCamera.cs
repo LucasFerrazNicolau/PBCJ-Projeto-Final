@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class ArredondaPosCamera : CinemachineExtension
 {
-    public float PixelsPerUnit = 32;
+    public float PixelsPerUnit = 32; // parâmetro de pixels por unidade utilizado
 
     protected override void PostPipelineStageCallback(
         CinemachineVirtualCameraBase vcam,
@@ -19,6 +19,11 @@ public class ArredondaPosCamera : CinemachineExtension
         }
     }
 
+    /// <summary>
+    /// Arredonda um valor float
+    /// </summary>
+    /// <param name="x">Valor float</param>
+    /// <returns>Arredondamento do valor</returns>
     float Round(float x)
     {
         return Mathf.Round(x * PixelsPerUnit) / PixelsPerUnit;

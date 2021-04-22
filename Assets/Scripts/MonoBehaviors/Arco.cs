@@ -8,7 +8,7 @@ public class Arco : MonoBehaviour
         var posicaoInicial = transform.position;
         var percentualCompleto = 0.0f;
 
-        // Rotação da munição
+        // Rotação da munição de acordo posição de estino (Lucas Ferraz Nicolau)
         Vector3 direction = destino - posicaoInicial;
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);

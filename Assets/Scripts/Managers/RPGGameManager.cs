@@ -2,11 +2,11 @@
 
 public class RPGGameManager : MonoBehaviour
 {
-    public static RPGGameManager instanciaCompartilhada = null;
+    public static RPGGameManager instanciaCompartilhada = null; // instância compartilhada do Singleton
 
-    public RPGCameraManager cameraManager;
+    public RPGCameraManager cameraManager; // referência da componente RPGCameraManager
 
-    public PontoSpawn playerPontoSpawn;
+    public PontoSpawn playerPontoSpawn; // referência do Ponto de Spawn do Player
 
     private void Awake()
     {
@@ -26,11 +26,17 @@ public class RPGGameManager : MonoBehaviour
         SetupScene();
     }
 
+    /// <summary>
+    /// Aplica as configurações iniciais do jogo
+    /// </summary>
     public void SetupScene()
     {
         SpawnPlayer();
     }
 
+    /// <summary>
+    /// Realiza o spawn do Player e direciona a câmera virtual a ele
+    /// </summary>
     public void SpawnPlayer()
     {
         if (playerPontoSpawn != null)

@@ -15,6 +15,9 @@ public class Inventario : MonoBehaviour
         CriarSlot();
     }
 
+    /// <summary>
+    /// Cria os slots iniciais do inventário
+    /// </summary>
     public void CriarSlot()
     {
         if (slotPrefab != null)
@@ -30,6 +33,11 @@ public class Inventario : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Inclui novo item ao inventário
+    /// </summary>
+    /// <param name="itemToAdd">Novo item a ser adicionado</param>
+    /// <returns>Retorna se o item foi incluído com sucesso</returns>
     public bool AddItem(Item itemToAdd)
     {
         for (int i = 0; i < items.Length; i++)

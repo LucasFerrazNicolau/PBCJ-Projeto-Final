@@ -4,6 +4,7 @@ using UnityEngine;
 [RequireComponent(typeof(SpriteRenderer))]
 [RequireComponent(typeof(BoxCollider2D))]
 
+// Classe criada e gerenciada por Lucas Ferraz Nicolau
 public class Cristal : MonoBehaviour
 {
     public Color[] cores; // Possíveis cores do cristal
@@ -27,6 +28,9 @@ public class Cristal : MonoBehaviour
         sr.color = corInicial;
     }
 
+    /// <summary>
+    /// Aplica a lógica de troca de cor ao cristal
+    /// </summary>
     public void TrocarCor()
     {
         if (habilitado && cores != null && cores.Length > 0)

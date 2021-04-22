@@ -4,10 +4,10 @@
 
 public class Item : ScriptableObject
 {
-    public string nomeObjeto;
-    public Sprite sprite;
-    public int quantidade;
-    public bool empilhavel;
+    public string nomeObjeto; // Nome do item
+    public Sprite sprite; // Sprite do item utilizada no inventário
+    public int quantidade; // Quantidade a qual o item coletável corresponde
+    public bool empilhavel; // Se o item acumula no inventário
 
     public enum TipoItem
     {
@@ -16,5 +16,5 @@ public class Item : ScriptableObject
         MUNICAO
     }
 
-    public TipoItem tipoItem;
+    public TipoItem tipoItem; // Tipo do item definido pela Enum
 }

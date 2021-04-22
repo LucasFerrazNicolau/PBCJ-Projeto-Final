@@ -18,10 +18,10 @@ public class Arma : MonoBehaviour
     public GameObject audioSource;
 
 
-    Camera cameraLocal;
+    Camera cameraLocal; // Referência para a Câmera Principal
 
-    float slopePositivo;
-    float slopeNegativo;
+    float slopePositivo; // Slope Positivo em relação ao jogador
+    float slopeNegativo; // Slope Negativo em relação ao jogador
 
     enum Quadrante
     {
@@ -79,6 +79,11 @@ public class Arma : MonoBehaviour
         municaoPiscina = null;
     }
 
+    /// <summary>
+    /// Realiza o spawn da munição puxando uma munição livre do pool e a ativando
+    /// </summary>
+    /// <param name="posicao">Posição onde a munição será criada</param>
+    /// <returns>Referência para a munição criada</returns>
     public GameObject SpawnMunicao(Vector3 posicao)
     {
         foreach (GameObject municao in municaoPiscina)
@@ -93,6 +98,9 @@ public class Arma : MonoBehaviour
         return null;
     }
 
+    /// <summary>
+    /// Cria uma munição e à atira em uma direção
+    /// </summary>
     void DispararMunicao()
     {
         Vector3 posicaoMouse = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -106,11 +114,22 @@ public class Arma : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Obtém o slope entre dois pontos
+    /// </summary>
+    /// <param name="ponto1">Primeiro ponto</param>
+    /// <param name="ponto2">Segundo ponto</param>
+    /// <returns>Slope relativo aos pontos</returns>
     float PegarSlope(Vector2 ponto1, Vector2 ponto2)
     {
         return (ponto2.y - ponto1.y) / (ponto2.x - ponto1.x);
     }
 
+    /// <summary>
+    /// Verifica se uma posição está acima do slope positivo
+    /// </summary>
+    /// <param name="posicaoEntrada">Posição de referência</param>
+    /// <returns>Se está acima do slope positivo</returns>
     bool AcimaSlopePositivo(Vector2 posicaoEntrada)
     {
         Vector2 posicaoPlayer = gameObject.transform.position;
@@ -120,6 +139,11 @@ public class Arma : MonoBehaviour
         return entradaInterseccao > interseccaoY;
     }
 
+    /// <summary>
+    /// Verifica se uma posição está acima do slope negativo
+    /// </summary>
+    /// <param name="posicaoEntrada">Posição de referência</param>
+    /// <returns>Se está acima do slope negativo</returns>
     bool AcimaSlopeNegativo(Vector2 posicaoEntrada)
     {
         Vector2 posicaoPlayer = gameObject.transform.position;
@@ -129,6 +153,10 @@ public class Arma : MonoBehaviour
         return entradaInterseccao > interseccaoY;
     }
 
+    /// <summary>
+    /// Obtém o quadrante o qual foi selecionado com o mouse em relação ao Player
+    /// </summary>
+    /// <returns>Quadrante clicado</returns>
     Quadrante PegarQuadrante()
     {
         Vector2 posicaoMouse = Input.mousePosition;
@@ -153,6 +181,9 @@ public class Arma : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Atualiza os parâmetros do Animator de acordo com o estado atual
+    /// </summary>
     void UpdateEstado()
     {
         if (atirando)

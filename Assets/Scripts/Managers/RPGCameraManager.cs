@@ -3,10 +3,10 @@ using UnityEngine;
 
 public class RPGCameraManager : MonoBehaviour
 {
-    public static RPGCameraManager instanciaCompartilhada = null;
+    public static RPGCameraManager instanciaCompartilhada = null; // instância compartilhada do Singleton
 
     [HideInInspector]
-    public CinemachineVirtualCamera virtualCamera;
+    public CinemachineVirtualCamera virtualCamera; // câmera virtual do Cinemachine
 
     private void Awake()
     {
