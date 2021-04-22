@@ -14,6 +14,10 @@ public class Arma : MonoBehaviour
     [HideInInspector]
     public Animator animator; // armazena componente do Animator
 
+    public AudioSource playerFiredSource;
+    public GameObject audioSource;
+
+
     Camera cameraLocal;
 
     float slopePositivo;
@@ -52,6 +56,9 @@ public class Arma : MonoBehaviour
         Vector2 acimaEsquerda = cameraLocal.ScreenToWorldPoint(new Vector2(0, Screen.height));
         slopePositivo = PegarSlope(abaixoEsquerda, acimaDireita);
         slopeNegativo = PegarSlope(acimaEsquerda, abaixoDireita);
+
+        audioSource = GameObject.Find("Audio Source 3");
+        playerFiredSource = audioSource.GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -92,6 +99,7 @@ public class Arma : MonoBehaviour
         GameObject municao = SpawnMunicao(transform.position);
         if (municao != null)
         {
+            playerFiredSource.Play();
             Arco arcoScript = municao.GetComponent<Arco>();
             float duracaoTrajetoria = 1.0f / velocidadeArma;
             StartCoroutine(arcoScript.ArcoTrajetoria(posicaoMouse, duracaoTrajetoria));

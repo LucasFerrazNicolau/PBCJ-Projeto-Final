@@ -8,6 +8,9 @@ public class Inimigo : Caractere
     public int forcaDano; // poder de dano do inimigo
     Coroutine danoCoroutine;
 
+    public AudioSource playerHitSource;
+    public GameObject audioSource;
+
     private void OnEnable()
     {
         ResetCaractere();
@@ -15,8 +18,14 @@ public class Inimigo : Caractere
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        audioSource = GameObject.Find("Audio Source 2");
+        playerHitSource = audioSource.GetComponent<AudioSource>();
+
         if (collision.gameObject.CompareTag("Player"))
         {
+            //playerHitSource.volume = 20;
+            playerHitSource.Play();
+
             Player player = collision.gameObject.GetComponent<Player>();
 
             if (danoCoroutine == null)
