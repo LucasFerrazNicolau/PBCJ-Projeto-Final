@@ -12,7 +12,7 @@ public class Player : Caractere
 
     public PontosDano pontosDano; // novo tipo que tem o valor da "saúde" do objeto script
 
-    public GameObject Destino;
+    public GameObject Destino;    // referência ao objeto que define a posição de destino do teleporte
 
     private void Start()
     {
@@ -23,9 +23,9 @@ public class Player : Caractere
         healthBar.caractere = this;
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)  //Define comportamento ao jogador colidir com não-inimigos
     {
-        if (collision.gameObject.CompareTag("Coletavel"))
+        if (collision.gameObject.CompareTag("Coletavel"))   // Objetos coletáveis para o iventário
         {
             Item danoObjeto = collision.gameObject.GetComponent<Consumable>().item;
             if (danoObjeto != null)
@@ -58,17 +58,16 @@ public class Player : Caractere
                 }
             }
         }
-        else if (collision.gameObject.CompareTag("Porta"))
+        else if (collision.gameObject.CompareTag("Porta")) // Portas que necessitam de chaves
         {
             Porta porta = collision.gameObject.GetComponent<Porta>();
             if (porta.tipoPorta == Porta.TipoPorta.CHAVE)
                 if (inventario.RemoveItem("CHAVE"))
                     porta.AbrirPorta();
         }
-        else if (collision.gameObject.CompareTag("TeleporteBoss"))
+        else if (collision.gameObject.CompareTag("TeleporteBoss")) // Faz acontecer o teleporte na área necessária
         {
             Destino = GameObject.Find("TeleportDestino");
-            Debug.Log("passou no portao");
             transform.position = Destino.transform.position;
         }
     }
