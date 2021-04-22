@@ -59494,7 +59494,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 58fd9a7c7b47d3d459afd86721bba8f0, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.249
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -61184,12 +61184,12 @@ PrefabInstance:
     - target: {fileID: 7777058235786516137, guid: 032160c778a9e034ebf993aed67dacc6,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 33.639816
+      value: 27.56
       objectReference: {fileID: 0}
     - target: {fileID: 7777058235786516137, guid: 032160c778a9e034ebf993aed67dacc6,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 22.505817
+      value: 23.33
       objectReference: {fileID: 0}
     - target: {fileID: 7777058235786516137, guid: 032160c778a9e034ebf993aed67dacc6,
         type: 3}
@@ -61299,12 +61299,12 @@ PrefabInstance:
     - target: {fileID: 7777058235786516137, guid: 032160c778a9e034ebf993aed67dacc6,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 28.39077
+      value: 22.79
       objectReference: {fileID: 0}
     - target: {fileID: 7777058235786516137, guid: 032160c778a9e034ebf993aed67dacc6,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 18.881828
+      value: 18.57
       objectReference: {fileID: 0}
     - target: {fileID: 7777058235786516137, guid: 032160c778a9e034ebf993aed67dacc6,
         type: 3}
@@ -119172,12 +119172,12 @@ PrefabInstance:
     - target: {fileID: 7777058235786516137, guid: 032160c778a9e034ebf993aed67dacc6,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 22.791664
+      value: 33.22
       objectReference: {fileID: 0}
     - target: {fileID: 7777058235786516137, guid: 032160c778a9e034ebf993aed67dacc6,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 15.293659
+      value: 21.66
       objectReference: {fileID: 0}
     - target: {fileID: 7777058235786516137, guid: 032160c778a9e034ebf993aed67dacc6,
         type: 3}
@@ -120748,7 +120748,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7777778, y: 1}
+    m_SensorSize: {x: 2.1612284, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0

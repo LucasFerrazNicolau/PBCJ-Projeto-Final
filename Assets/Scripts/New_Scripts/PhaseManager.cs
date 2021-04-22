@@ -9,16 +9,31 @@ public class PhaseManager : MonoBehaviour
     public  GameObject  start;              // Game object do painel default
     public  GameObject  phaseSelector;      // Game object do painel Phase_select
     public  GameObject  options;            // Game object do painel Options
+    public GameObject title;            // Game object do painel Titulo
+    public bool isInTitle = false;
 
     // Start is called before the first frame update
     void Start()
     {
+        isInTitle = true;
+        title = GameObject.Find("TitleScreen");
         start = GameObject.Find("Default");
+        start.SetActive(false);
         phaseSelector = GameObject.Find("Phases");
         phaseSelector.SetActive(false);
         options = GameObject.Find("Options");
         options.SetActive(false);
     }
+    void Update()
+    {
+        if (Input.anyKeyDown && isInTitle == true)
+        {                                         // qualquer tecla pressionada ira carregar o menu principal
+            isInTitle = false;
+            title.SetActive(false);
+            Comeco();
+        }
+    }
+
 
     public void Fases() {                   // Desativa o painel start e ativa o phaseSelector
         start.SetActive(false);
@@ -27,6 +42,7 @@ public class PhaseManager : MonoBehaviour
 
     public void Comeco() {                  // Deixa só o painel start ativo
         start.SetActive(true);
+        title.SetActive(false);
         phaseSelector.SetActive(false);
         options.SetActive(false);
     }

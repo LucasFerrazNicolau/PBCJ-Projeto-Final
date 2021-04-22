@@ -34,7 +34,7 @@ public class DialogueManager : MonoBehaviour
 
     public void DisplayNextSentence() {
         if(senteces.Count == 0) {
-            EndDialogue();
+            painel.SetActive(false);
             return;
         }
 
@@ -46,7 +46,7 @@ public class DialogueManager : MonoBehaviour
     void EndDialogue() {
         painel.SetActive(false);
         Debug.Log("Finish");
-        SceneManager.LoadScene("Lab5_Vitoria");
+        SceneManager.LoadScene("Win_Game");
     }
 
     
