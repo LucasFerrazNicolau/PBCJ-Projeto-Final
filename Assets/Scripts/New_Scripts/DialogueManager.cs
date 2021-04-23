@@ -17,33 +17,33 @@ public class DialogueManager : MonoBehaviour
         senteces = new Queue<string>();
     }
 
-    public void StartDialogue (Dialogue dialogue) {
+    public void StartDialogue (Dialogue dialogue) {                 // começa o dialogo
         Debug.Log("Starting conversation with " + dialogue.name);
 
-        nameText.text = dialogue.name;
-        painel.SetActive(true);
+        nameText.text = dialogue.name;                              // seta o nome do dialogo
+        painel.SetActive(true);                                     // ativa o dialogo
 
         senteces.Clear();
 
-        foreach(string sentence in dialogue.sentences) {
+        foreach(string sentence in dialogue.sentences) {            // carrega as frases
             senteces.Enqueue(sentence);
         }
 
-        DisplayNextSentence();
+        DisplayNextSentence();                                      // apresenta a primeira frase
     }
 
-    public void DisplayNextSentence() {
+    public void DisplayNextSentence() {                             // mostra a proxima frase
         if(senteces.Count == 0) {
-            painel.SetActive(false);
+            painel.SetActive(false);                                // desativa o painel se acabar o dialogo
             return;
         }
 
-        string sentence = senteces.Dequeue();
+        string sentence = senteces.Dequeue();                       // carrega a proxima frase
         Debug.Log(sentence);
-        dialogueText.text = sentence;
+        dialogueText.text = sentence;                               // adiciona a proxima frase no painel
     }
 
-    void EndDialogue() {
+    void EndDialogue() {                                            // encerra o dialogo e carrega a cena vitoria
         painel.SetActive(false);
         Debug.Log("Finish");
         SceneManager.LoadScene("Win_Game");

@@ -4,17 +4,17 @@ using UnityEngine;
 
 public class DialogueTrigger : MonoBehaviour
 {
-    public  Dialogue    dialogue;
+    public  Dialogue    dialogue;           // guarda o dialogo a ser usado
 
     private void Update() {
         
     }
 
     private void Start() {
-        TriggerDialogue();
-    }
+        TriggerDialogue();                  // chama a função q inicia o dialogo
+    }   
 
-    public void TriggerDialogue() {        
+    public void TriggerDialogue() {         // inicia o dialogo passando o dialogo a ser apresentado
         FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
         
     }
