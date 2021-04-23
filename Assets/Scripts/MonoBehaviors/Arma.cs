@@ -14,8 +14,8 @@ public class Arma : MonoBehaviour
     [HideInInspector]
     public Animator animator; // armazena componente do Animator
 
-    public AudioSource playerFiredSource;
-    public GameObject audioSource;
+    public AudioSource playerFiredSource; // nova fonte de audio para o atirar de flecha
+    public GameObject audioSource; // Referencia ao objeto tipo audio source na cena
 
 
     Camera cameraLocal; // Referência para a Câmera Principal
@@ -57,8 +57,8 @@ public class Arma : MonoBehaviour
         slopePositivo = PegarSlope(abaixoEsquerda, acimaDireita);
         slopeNegativo = PegarSlope(acimaEsquerda, abaixoDireita);
 
-        audioSource = GameObject.Find("Audio Source 3");
-        playerFiredSource = audioSource.GetComponent<AudioSource>();
+        audioSource = GameObject.Find("Audio Source 3"); // Localiza o objeto audio source 3
+        playerFiredSource = audioSource.GetComponent<AudioSource>(); // liga o componente do objeto à fonte de audio
     }
 
     private void Update()
@@ -107,7 +107,7 @@ public class Arma : MonoBehaviour
         GameObject municao = SpawnMunicao(transform.position);
         if (municao != null)
         {
-            playerFiredSource.Play();
+            playerFiredSource.Play(); //toca o audio de atirar flecha
             Arco arcoScript = municao.GetComponent<Arco>();
             float duracaoTrajetoria = 1.0f / velocidadeArma;
             StartCoroutine(arcoScript.ArcoTrajetoria(posicaoMouse, duracaoTrajetoria));

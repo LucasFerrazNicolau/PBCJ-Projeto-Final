@@ -8,8 +8,8 @@ public class Inimigo : Caractere
     public int forcaDano; // poder de dano do inimigo
     Coroutine danoCoroutine;
 
-    public AudioSource playerHitSource;
-    public GameObject audioSource;
+    public AudioSource playerHitSource; // nova fonte de audio para o acerto do inimigo
+    public GameObject audioSource; // Referencia ao objeto do tipo audio source na cena
 
     private void OnEnable()
     {
@@ -18,13 +18,12 @@ public class Inimigo : Caractere
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        audioSource = GameObject.Find("Audio Source 2");
-        playerHitSource = audioSource.GetComponent<AudioSource>();
+        audioSource = GameObject.Find("Audio Source 2"); // Localiza o objeto audio source 2
+        playerHitSource = audioSource.GetComponent<AudioSource>(); // liga o componente do objeto à fonte de audio
 
         if (collision.gameObject.CompareTag("Player"))
         {
-            //playerHitSource.volume = 20;
-            playerHitSource.Play();
+            playerHitSource.Play(); //toca o audio de jogador atingido
 
             Player player = collision.gameObject.GetComponent<Player>();
 
